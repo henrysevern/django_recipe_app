@@ -47,3 +47,12 @@ context = {
 - In home.html file clear out all html, head and body tags and at top add - {% extends "recipes/base.html" %} and add the block content and end block tags.
 - All page content goes in between these tags.
 
+
+# Adding bootstrap 
+- Head to the bootstrap website and to the 'get started' section.
+- In the intoduction section part 2, copy and paste the link tag and add into the head tags of base.html
+- Copy and paste the JavaScript script tags and add to bottom of the body tags in base.html
+
+
+# Sources
+Include() function - djangoproject.com/en/1.11/ref/urls/#django.conf.urls.include
