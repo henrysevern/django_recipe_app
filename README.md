@@ -54,6 +54,16 @@ context = {
 - Copy and paste the JavaScript script tags and add to bottom of the body tags in base.html
 
 
+## Setting up admin
+In the terminal;
+- python manage.py migrate
+- python3 manage.py createsuperuser
+
+- Create a username and password 
+- Type /admin on the end of the browser url to access the admin.
+
+
+
 # Sources
 Include() function - djangoproject.com/en/1.11/ref/urls/#django.conf.urls.include
 Nav Bar - Bootstrap 
