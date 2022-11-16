@@ -56,3 +56,4 @@ context = {
 
 # Sources
 Include() function - djangoproject.com/en/1.11/ref/urls/#django.conf.urls.include
+Nav Bar - Bootstrap 
