@@ -1,16 +1,17 @@
-## Installing Django and Setting up the app;
-- pip3 install 'django<4'
-- pip install --upgrade pip
+## Installing Django and Setting up the app;
+>  pip3 install 'django<4'
+
+>  pip install --upgrade pip
 ## Create a project;
-- django-admin startproject django_recipes .
+>  django-admin startproject django_recipes .
 ## Check that the project server is working;
-- python3 manage.py runserver
+> python3 manage.py runserver
 ## Create a new app;
-- manage.py startapp recipes 
+>  manage.py startapp recipes 
 
 - In 'django_recipes/settings.py' add the app (recipes) to the INSTALLED_APPS dictionary.
 
-## Create first view and url
+## Create first view and url;
 - In recipes/views.py import 'HttpResponse package' and create a function that allows a view for the user, for example;
 
 - Create a file in recipes folder called urls.py (so we can work primarily from the app folder) and import views.py from the same file, "from . import views"
@@ -19,7 +20,8 @@
 urlpatterns = [
     path('', views.home, name="recipes-home"),
 ]
-- Run server to check it is working! - python3 manage.py runserver
+- Run server to check it is working! 
+> python3 manage.py runserver
 
 ## Create HTML templates 
 - Create a 'templates' folder in 'recipes' folder, create another folder called 'recipes' in 'templates', and then in that, create a file called 'home.html'.
@@ -50,17 +52,30 @@ context = {
 
 # Adding bootstrap 
 - Head to the bootstrap website and to the 'get started' section.
-- In the intoduction section part 2, copy and paste the link tag and add into the head tags of base.html
-- Copy and paste the JavaScript script tags and add to bottom of the body tags in base.html
+- In the intoduction section part 2, copy and paste the link tag and add into the head tags of base.html.
+- Copy and paste the JavaScript script tags and add to bottom of the body tags in base.html.
 
 
 ## Setting up admin
 In the terminal;
-- python manage.py migrate
-- python3 manage.py createsuperuser
+> python manage.py migrate
 
-- Create a username and password 
+> python3 manage.py createsuperuser
+
+- Create a username and password. 
 - Type /admin on the end of the browser url to access the admin.
+
+## Creating the model
+- Create a recipes model in the recipes/models.py file.
+- Make the migrations to update the database, in the terminal run:
+> python manage.py makemigrations
+
+> python manage.py migrate
+- In order to see the model in the admin it has to be registered in recipes/admin.py, add;
+'from . import models'
+'admin.site.register(models.Recipe)'
+- Run the server, head back to ""/admin, login and add some recipes.
+- To use this real data in our template, update the recipes/views.py file home view to query the database.
 
 
 
