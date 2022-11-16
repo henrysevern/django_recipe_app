@@ -1,7 +1,9 @@
+<!-- Extends content from base.html -->
 {% extends "recipes/base.html" %}
 
 {% block content %}
 <h1>Recipes:</h1>
+<!-- For loop to loop over recipe content -->
 {% for recipe in recipes %}
 <h1>{{recipe.title}}</h1>
 <p>{{recipe.author}} | {{recipe.date_posted}}</p>

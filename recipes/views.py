@@ -22,7 +22,8 @@ recipes = [
 ]
 
 
-# Create your views here.
+
+# Function renders home page and passes in recipes dictionary
 def home(request):
     context = {
     'recipes': recipes
@@ -30,6 +31,6 @@ def home(request):
     return render(request, "recipes/home.html", context)
     
 
-
+# Function renders about page
 def about(request):
-    return HttpResponse ("<h1>This about my recipe app!</h1>")
+    return render(request, "recipes/about.html")

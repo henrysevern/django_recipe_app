@@ -24,6 +24,7 @@ urlpatterns = [
 ## Create HTML templates 
 - Create a 'templates' folder in 'recipes' folder, create another folder called 'recipes' in 'templates', and then in that, create a file called 'home.html'.
 - In views.py add to the 'home' function - "return render(request, "recipes/home.html")" and delete the return of the HttpResponse. 
+
 ### Pass some data into the templates
 - Create some dummy recipes dictionary called 'recipes' in views.py for some context.
 - Define a variable called context within the home function and pass the recipes data into it creating an object;
@@ -31,4 +32,18 @@ context = {
     'recipes': recipes
   }
 - Pass the context variable into the return render statement.
+- Using logic, create and end a loop to go through the 'recipe' object to pull data;
+{% for recipe in recipes %}
+<h1>{{recipe.title}}</h1>
+<p>{{recipe.author}} | {{recipe.date_posted}}</p>
+<h5>{{recipe.content}}</h5>
+<hr />
+{% endfor %}
+
+## Create a Base file for the same content across all of the app pages
+- Create a file called base.html in the recipes/templates/recipes file
+- Insert boilerplate html into file and in the body insrt block content and endblock tags; 
+{% block content %} {% endblock %}
+- In home.html file clear out all html, head and body tags and at top add - {% extends "recipes/base.html" %} and add the block content and end block tags.
+- All page content goes in between these tags.
 
