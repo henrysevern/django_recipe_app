@@ -22,4 +22,13 @@ urlpatterns = [
 - Run server to check it is working! - python3 manage.py runserver
 
 ## Create HTML templates 
-- 
+- Create a 'templates' folder in 'recipes' folder, create another folder called 'recipes' in 'templates', and then in that, create a file called 'home.html'.
+- In views.py add to the 'home' function - "return render(request, "recipes/home.html")" and delete the return of the HttpResponse. 
+### Pass some data into the templates
+- Create some dummy recipes dictionary called 'recipes' in views.py for some context.
+- Define a variable called context within the home function and pass the recipes data into it creating an object;
+context = {
+    'recipes': recipes
+  }
+- Pass the context variable into the return render statement.
+
