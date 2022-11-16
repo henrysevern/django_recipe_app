@@ -14,9 +14,12 @@
 - In recipes/views.py import 'HttpResponse package' and create a function that allows a view for the user, for example;
 
 - Create a file in recipes folder called urls.py (so we can work primarily from the app folder) and import views.py from the same file, "from . import views"
-- Back in urls.py in django_recipes import the package "include" and create another path - "path('recipes/', include('recipes.urls'))" and what this is basically saying is when ever anyone goes to my app website "/" anything go to recipes.urls and use those url paths.
-- Create a new url path;
+- Back in urls.py in django_recipes import the package "include" and create another path - "path('', include('recipes.urls'))" and what this is basically saying is when ever anyone goes to my app website "/" anything go to recipes.urls and use those url paths.
+- Create a new url path in recipes/urls.py;
 urlpatterns = [
     path('', views.home, name="recipes-home"),
 ]
 - Run server to check it is working! - python3 manage.py runserver
+
+## Create HTML templates 
+- 
