@@ -80,5 +80,6 @@ In the terminal;
 
 
 # Sources
-Include() function - djangoproject.com/en/1.11/ref/urls/#django.conf.urls.include
-Nav Bar - Bootstrap 
+- Include() function - https://djangoproject.com/en/1.11/ref/urls/#django.conf.urls.include
+- Nav Bar - Bootstrap 
+- Crispy Forms - https://django-crispy-forms.readthedocs.io/en/latest/index.html
