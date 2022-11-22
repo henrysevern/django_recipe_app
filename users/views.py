@@ -11,7 +11,7 @@ def register(request):
       form.save()
       # cleaned data is a dictionary
       username = form.cleaned_data.get('username')
-      messages.success(request, f"{username}, you're account is created!")
+      messages.success(request, f"{username}, you're account is created! Please login")
       return redirect('recipes-home')
   else:
     form = forms.UserRegisterForm()
