@@ -24,16 +24,15 @@ recipes = [
 ]
 
 
-
 # Function renders home page and passes in recipes dictionary
 def home(request):
-    
+
     recipes = models.Recipe.objects.all()
     context = {
-    'recipes': recipes
-  }
+        'recipes': recipes
+    }
     return render(request, "recipes/home.html", context)
-    
+
 
 # Function renders about page
 def about(request):
