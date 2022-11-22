@@ -1,12 +1,8 @@
 {% extends "recipes/base.html" %}
 <!-- Extends recipes/base.html -->
-
 {% block content %}
 <div class="container">
-    <h2>You have been logged out!</h2>
-  <div class="border-top pt-3">
-    <a href="{% url 'user-login' %}">Log back in here</a>
-  </div>
+    <h1>{{ user.username }}</h1>
 </div>
 
 <!--End block content of recipes/base.html -->

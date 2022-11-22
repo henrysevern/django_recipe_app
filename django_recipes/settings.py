@@ -135,3 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Redirects login to recipes home page instead of standard profile url
 LOGIN_REDIRECT_URL = 'recipes-home'
+LOGIN_URL = 'user-login'
