@@ -5,14 +5,14 @@
 <h1>Recipes: {{object.title}}</h1>
 <!-- For loop to loop over recipe content -->
 <div class="row">
-        <div class="card my-4 col-12 col-md-6 col-lg-4">
-            <div class="card-body">
-                <h5 class="card-title">{{ object.title }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{ object.author }}</h6>
-                <p class="card-text">{{ object.description }}</p>
-                <h6 class="card-subtitle mb-2 text-muted">{{ object.updated_at }}</h6>
-            </div>
+    <div class="card my-4 col-12 col-md-6 col-lg-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ object.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ object.author }}</h6>
+            <p class="card-text">{{ object.description }}</p>
+            <h6 class="card-subtitle mb-2 text-muted">{{ object.updated_at }}</h6>
         </div>
+    </div>
 </div>
 {% if object.author == user or user.is_staff %}
 <div class="col-4">
@@ -20,4 +20,22 @@
     <a class="btn btn-outline-danger" href="{% url 'recipes-delete' object.id %}">Delete</a>
 </div>
 {% endif %}
+
+<!-- Share recipe section with social media buttons -->
+<div class="col-md-12 text-center">
+    <h4 class="text-center font-weight-bold dark-grey-text mt-3 mb-3">
+        <strong>Share this recipe: </strong>
+    </h4>
+    <a class="btn btn-primary" style="background-color: #3b5998;" href="https://www.facebook.com/" target="_blank"
+        role="button"><i class="fab fa-facebook-f"></i></a>
+    <a class="btn btn-primary" style="background-color: #55acee;" href="https://www.twitter.com/" target="_blank"
+        role="button"><i class="fab fa-twitter"></i></a>
+    <a class="btn btn-primary" style="background-color: #dd4b39;" href="https://www.google.com/" target="_blank"
+        role="button"><i class="fab fa-google"></i></a>
+    <a class="btn btn-primary" style="background-color: #ac2bac;" href="https://www.instagram.com/" target="_blank"
+        role="button"><i class="fab fa-instagram"></i></a>
+    <a class="btn btn-primary" style="background-color: #0082ca;" href="https://www.linkedin.com/" target="_blank"
+        role="button"><i class="fab fa-linkedin-in"></i></a>
+
+</div>
 {% endblock content %}
