@@ -16,6 +16,7 @@ class Recipe(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    # When a new instance is made the function tells django where to go
     def get_absolute_url(self):
         return reverse("recipes-detail", kwargs={'pk': self.pk})
 
