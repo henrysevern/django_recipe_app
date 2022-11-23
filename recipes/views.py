@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from django.urls import reverse_lazy
 from . import models
 
 
@@ -41,6 +42,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = models.Recipe
     fields = ['title', 'description']
+    # Function only allows the user to update their own recipes
 
     def test_func(self):
         recipe = self.get_object()
@@ -49,6 +51,16 @@ class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+# Delete view function to delete recipes
+class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = models.Recipe
+    success_url = reverse_lazy('recipes-home')
+
+    def test_func(self):
+        recipe = self.get_object()
+        return self.request.user == recipe.author
 
 
 # Function renders about page
