@@ -13,6 +13,9 @@ urlpatterns = [
     # url path for update recipe
     path('recipe/<int:pk>/update/', views.RecipeUpdateView.as_view(),
          name="recipes-update"),
+    # url path for delete recipe
+    path('recipe/<int:pk>/delete/', views.RecipeDeleteView.as_view(),
+         name="recipes-delete"),
     # url path for about page
     path('about/', views.about, name="recipes-about"),
 ]
