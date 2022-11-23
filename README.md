@@ -83,3 +83,4 @@ In the terminal;
 - Include() function - https://djangoproject.com/en/1.11/ref/urls/#django.conf.urls.include
 - Nav Bar - Bootstrap 
 - Crispy Forms - https://django-crispy-forms.readthedocs.io/en/latest/index.html
+- Masonary style cards - https://getbootstrap.com/docs/5.2/examples/masonry/
