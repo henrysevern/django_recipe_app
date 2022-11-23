@@ -66,3 +66,8 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 # Function renders about page
 def about(request):
     return render(request, "recipes/about.html")
+
+
+# Function renders FAQ page
+def questions(request):
+    return render(request, "recipes/questions.html")
