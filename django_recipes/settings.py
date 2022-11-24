@@ -2,6 +2,9 @@ import os
 from pathlib import Path
 if os.path.exists("env.py"):
     import env
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,9 +38,17 @@ INSTALLED_APPS = [
 
     # 3rd party
     'crispy_forms',
+    'cloudinary',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# adding config
+cloudinary.config(
+     cloud_name="dfzseefuk",
+     api_key="843492698891178",
+     api_secret="-8QCcApmSIV7LABHc-x-vTA_Gvo"
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
