@@ -1,20 +1,31 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 
 # Model for recipes
 class Recipe(models.Model):
     # Gives the recipe a maximum title character length of 100 characters
     title = models.CharField(max_length=100)
-
-    description = models.TextField()
-
-    # if a user is deleted so are all the recipes the user created
+    description = models.TextField(max_length=200)
+    ingredients = models.TextField
+    directions = models.TextField
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    featured_image = CloudinaryField('image', default='placeholder')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    calories = models.TextField(max_length=10, blank=True)
+    carbs = models.TextField(max_length=10, blank=True)
+    fat = models.TextField(max_length=10, blank=True)
+    protein = models.TextField(max_length=10, blank=True)
+    time = models.TextField(max_length=10, blank=True)
+    servings = models.TextField(max_length=10, blank=True)
+
+    likes = models.ManyToManyField(User, related_name='recipe_likes',
+                                   blank=True)
 
     # When a new instance is made the function tells django where to go
     def get_absolute_url(self):
@@ -23,3 +34,6 @@ class Recipe(models.Model):
     # Returns the recipe object as its title
     def __str__(self):
         return self.title
+
+    def number_of_likes(self):
+        return self.likes.count()
