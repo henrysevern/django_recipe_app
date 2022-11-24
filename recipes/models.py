@@ -9,8 +9,8 @@ class Recipe(models.Model):
     # Gives the recipe a maximum title character length of 100 characters
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=200)
-    ingredients = models.TextField
-    directions = models.TextField
+    ingredients = models.TextField(max_length=300, null=True)
+    directions = models.TextField(max_length=300, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     featured_image = CloudinaryField('image', default='placeholder')
 
