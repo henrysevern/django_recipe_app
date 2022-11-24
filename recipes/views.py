@@ -31,7 +31,9 @@ class RecipeDetailView(DetailView):
 # Create view class to create recipes
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = models.Recipe
-    fields = ['title', 'description']
+    fields = ['title', 'description', 'featured_image', 'directions',
+              'ingredients', 'time', 'servings', 'calories', 'carbs',
+              'fat', 'protein']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -41,7 +43,9 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 # Update view class to update recipes
 class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = models.Recipe
-    fields = ['title', 'description']
+    fields = ['title', 'description', 'featured_image', 'directions',
+              'ingredients', 'time', 'servings', 'calories', 'carbs',
+              'fat', 'protein']
     # Function only allows the user to update their own recipes
 
     def test_func(self):
