@@ -17,12 +17,12 @@ class Recipe(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    calories = models.CharField()(max_length=10, blank=True)
-    carbs = models.CharField()(max_length=10, blank=True)
-    fat = models.CharField()(max_length=10, blank=True)
-    protein = models.CharField()(max_length=10, blank=True)
-    time = models.CharField()(max_length=10, blank=True)
-    servings = models.CharField()(max_length=10, blank=True)
+    calories = models.CharField(max_length=10, blank=True)
+    carbs = models.CharField(max_length=10, blank=True)
+    fat = models.CharField(max_length=10, blank=True)
+    protein = models.CharField(max_length=10, blank=True)
+    time = models.CharField(max_length=10, blank=True)
+    servings = models.CharField(max_length=10, blank=True)
 
     likes = models.ManyToManyField(User, related_name='recipe_likes',
                                    blank=True)
