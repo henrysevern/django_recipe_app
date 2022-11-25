@@ -1,1 +1,1 @@
-web: gunicorn h-recipe-cards.wsgi
+web: gunicorn django_recipes.wsgi
