@@ -3,15 +3,13 @@ from pathlib import Path
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
-if os.path.exists("env.py"):
-    import env
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+# TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -33,7 +31,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
 
     # local apps
     'recipes',
@@ -41,8 +41,6 @@ INSTALLED_APPS = [
 
     # 3rd party
     'crispy_forms',
-    'cloudinary',
-    'cloudinary_storage'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -69,7 +67,7 @@ ROOT_URLCONF = 'django_recipes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
