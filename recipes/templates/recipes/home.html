@@ -7,7 +7,9 @@
 <div class="row" data-masonry='{"percentPosition": true }'>
     {% for recipe in recipes %}
     <div class="card my-2 col-12 col-md-6 col-lg-4">
-        <img src="{{ recipe.featured_image }}" class="card-img-top" alt="...">
+        <!-- {% if recipe.featured_image %} -->
+        <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="">
+        <!-- {% endif %} -->
         <div class="card-body">
             <h5 class="card-title">{{ recipe.title }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ recipe.author }}</h6>
