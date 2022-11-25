@@ -1,3 +1,65 @@
-body {
-    background-color: red;
+/* recipe detail page */
+#image-background{
+    max-height: 200px;
+}
+
+#main-container {
+    border-radius: 3px;
+}
+
+#main-row {
+    margin-top: 50px;
+}
+
+#recipe-title {
+    text-align: center;
+    padding-top: 4px;
+    margin-bottom: 3px;
+}
+
+#recipe-subtitle {
+    margin-bottom: 2px;
+    text-align: center;
+}
+/* quanties, servings, nutritional value boxes and cicles */
+#nutritional-box {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+#nutritional-border {
+    border-left: 2px solid lightblue;
+    height: 40px;
+    margin-left: 5px;
+}
+#nutritional-inline{
+    display: inline;   
+}
+
+li {
+font-size: 0.95rem;
+line-height: 1.7rem;
+}
+.circle{
+background-color: #e6ffe6;
+border-radius: 50px;
+padding: 20px;
+}
+.circle:hover{
+background-color:#99ff99;
+}
+.rectangle{
+background-color: #ffb3b3;
+padding: 20px;
+}
+.rectangle:hover{
+background-color:#ffe6e6;
+}
+
+/* method and ingredients section */
+
+#jumbotron-background {
+    background-color: whitesmoke;
 }
