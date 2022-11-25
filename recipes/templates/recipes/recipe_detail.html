@@ -2,81 +2,93 @@
 {% extends "recipes/base.html" %}
 
 {% block content %}
+<!-- featured image set as background -->
 <section>
-    <div class="" style="max-height:200px;">
-        <img src= "{{recipe.featured_image.url}}" style="width:100%">
+    <div style="max-height:200px;">
+        <img src="{{recipe.featured_image.url}}" style="width:100%">
     </div>
 </section>
-
-<div class="container-fluid mt-5 mt-md-0 mb-5">
-    <div class="row" style="margin-top: 50px;">
+<!-- Main layout -->
+<div class="container-fluid mt-5 mt-md-0 mb-5" id="main-container">
+    <!-- Grid row -->
+    <div class="row" id="main-row">
+        <!-- Grid column -->
         <div class="col-md-12 px-lg-5">
+            <!-- Recipe card -->
             <div class="card pb-5 mx-md-3">
+                <!-- Card body -->
                 <div class="card-body">
+                    <!-- Card Container -->
                     <div class="container">
-                        <h1 class="text-center h1 pt-4 mb-3">
+                        <!-- Recipe title-->
+                        <h1 id="recipe-title">
                             <strong>{{object.title}}</strong>
                         </h1>
+                        <!-- Author and time section -->
                         <div class="row">
-                            <h6 class="card-subtitle mb-2 text-muted text-center">By: {{ object.author }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted text-center">Last Updated: {{ object.updated_at }}
+                            <h6 class="card-subtitle text-muted" id="recipe-subtitle">By: {{ object.author }}</h6>
+                            <h6 class="card-subtitle text-muted" id="recipe-subtitle">Last Updated:
+                                {{ object.updated_at }}
                             </h6>
-                            <div class="col-md-12 col-xl-12 d-flex justify-content-center">
-                                <div class="d-inline">
+                        </div>
+                        <!-- Section for calories, carbs, fat and protein -->
+                        <div>
+                            <div class="col-md-12 col-xl-12" id="nutritional-box">
+                                <div id="nutritional-inline">
                                     <label for="calories">Calories</label>
                                     <span id="calories" class="border circle">{{recipe.calories}} Kcal</span>
                                 </div>
-                                <div style="border-left: 2px solid blue;height: 40px; margin-left:5px;"></div>
-                                <div class="d-inline">
+                                <div id="nutritional-border"></div>
+                                <div id="nutritional-inline">
                                     <label for="carbs" class="mx-2">Carbs</label>
                                     <span id="carbs" class="border circle">{{recipe.carbs}} g</span>
                                 </div>
-                                <div style="border-left: 2px solid blue;height: 40px; margin-left:5px;"></div>
-                                <div class="d-inline">
+                                <div id="nutritional-border"></div>
+                                <div id="nutritional-inline">
                                     <label for="fat" class="mx-2">Fat</label>
                                     <span id="fat" class="border circle">{{recipe.fat}} g</span>
                                 </div>
-                                <div style="border-left: 2px solid blue;height: 40px; margin-left:5px;"></div>
-                                <div class="d-inline">
+                                <div id="nutritional-border"></div>
+                                <div id="nutritional-inline">
                                     <label for="protein" class="mx-2">Protein</label>
                                     <span id="protein" class="border circle">{{recipe.protein}} g</span>
                                 </div>
                             </div>
                         </div>
+                        <!-- Section for prep time and amount of servings -->
                         <div class="row">
-                            <div class="col-md-12 col-xl-12 d-flex justify-content-center">
-                                <div class="d-inline">
+                            <div class="col-md-12 col-xl-12" id="nutritional-box">
+                                <div id="nutritional-inline">
                                     <label for="calories">Prep:</label>
                                     <span id="calories" class="border rectangle">{{recipe.time}} mins</span>
                                 </div>
-                                <div class="d-inline">
+                                <div id="nutritional-inline">
                                     <label for="carbs" class="mx-2">Servings:</label>
                                     <span id="carbs" class="border rectangle">{{recipe.servings}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row row pt-lg-5 pt-3">
-
+                            <!-- Recipe desciption section -->
                             <div class="col-md-12 col-xl-12">
-
-                                <p> {{recipe.description}}</p>
+                                <!-- <p> {{recipe.description}}</p> -->
                                 <div class="row">
+                                    <!-- Ingredients and method section -->
                                     <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12">
-                                        <div class="jumbotron" style="background-color: #f5f5f0">
+                                        <div class="jumbotron" id="jumbotron-background">
                                             <h1>Ingredients:</h1>
                                             <p>{{recipe.ingredients|safe}}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12">
-                                        <div class="jumbotron" style="background-color: #f5f5f0">
+                                        <div class="jumbotron" id="jumbotron-background">
                                             <h1>Method:</h1>
                                             <p>{{recipe.directions}}</p>
                                         </div>
                                     </div>
                                 </div>
-
+                                <!-- Update and delete section if user is owner of recipe -->
                                 <div class="row my-5">
-
                                     {% if object.author == user or user.is_staff %}
                                     <div class="col-4">
                                         <a class="btn btn-outline-info"
@@ -85,6 +97,7 @@
                                             href="{% url 'recipes-delete' object.id %}">Delete</a>
                                     </div>
                                     {% endif %}
+                                    <!-- Share on social media section -->
                                     <div class="col-md-12 text-center">
                                         <h4 class="text-center font-weight-bold dark-grey-text mt-3 mb-3">
                                             <strong>Share this recipe: </strong>
