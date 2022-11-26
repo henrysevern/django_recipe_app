@@ -63,3 +63,52 @@ background-color:#ffe6e6;
 #jumbotron-background {
     background-color: whitesmoke;
 }
+
+/* footer */
+footer {
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+p.copyright {
+    position: absolute;
+    width: 100%;
+    line-height: 15px;
+    font-size: 0.7em;
+    text-align: center;
+    bottom:0;
+}
+
+.social-links {
+    padding-bottom: 15px;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color: #fafafa;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.social-links li a i:hover {
+    background: lightblue;
+}
+
+#footer-details {
+    margin: 20px;
+}
