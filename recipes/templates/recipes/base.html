@@ -11,7 +11,7 @@
   {% if title %}
   <title>{{title}}</title>
   {% else %}
-  <title>Django Recipes App</title>
+  <title>H's Recipe Cards</title>
   {% endif %}
   <!-- Link to bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +23,7 @@
 <body class="m-2">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'recipes-home' %}">Django Recipes App</a>
+      <a class="navbar-brand" href="{% url 'recipes-home' %}">H's Recipe Cards</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,6 +55,8 @@
         </ul>
         <div class="navbar-nav">
           {% if request.user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'user-profile' %}"> <i class="fa-solid fa-user"></i>
+            {{ user.username }}</a>
           <a class="nav-item nav-link" href="{% url 'user-logout' %}">Logout</a>
           {% else %}
           <a class="nav-item nav-link" href="{% url 'user-login' %}">Login</a>
@@ -76,20 +78,68 @@
     {% endfor %}
     {% endif %}
   </div>
+
   {% block content %} {% endblock %}
-  <!-- Bootstrap script tags -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
-  </script>
-  <!-- Font awsome link -->
-  <script src="https://kit.fontawesome.com/a3c891aa8d.js" crossorigin="anonymous"></script>
-  <!-- Bootstrap masonry link -->
-  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
-  </script>
+
+  <footer class="bg-light">
+    <div id="footer-details" class="row container-fluid m-0">
+      <ul class="list-inline social-links">
+        <li class="list-inline-item">
+            <span>Follow us on</span>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" href="#">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" href="#">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" href="#">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" href="#">
+            <i class="fa fa-pinterest" aria-hidden="true"></i>
+            <span class="sr-only">Pinterest</span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" href="#">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a target="_blank" href="#">
+            <i class="fa fa-youtube" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p class="copyright text-muted">© Henry Severn 2022</p>
+</footer>
 </body>
+<!-- Bootstrap script tags -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+  integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+</script>
+<!-- Font awsome link -->
+<script src="https://kit.fontawesome.com/a3c891aa8d.js" crossorigin="anonymous"></script>
+<!-- Bootstrap masonry link -->
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+  integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+</script>
 
 </html>
