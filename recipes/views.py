@@ -4,6 +4,7 @@ from django.views.generic import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from . import models
+from .forms import CommentForm
 
 
 # Function renders home page and passes in recipes dictionary
@@ -26,6 +27,12 @@ class RecipeListView(ListView):
 # Detail view class to see a single recipe
 class RecipeDetailView(DetailView):
     model = models.Recipe
+
+    def comments(request):
+        return render(request, "recipe_detail",
+                      {
+            "comment": CommentForm
+    })
 
 
 # Create view class to create recipes
