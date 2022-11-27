@@ -3,17 +3,28 @@
 - Recipe cards is a interactive application for your recipes! Store all your favourite recipes in one place for quick and easy access without having to search through countless recipe books! Create, edit and view all your recipes as well as viewing others on the app. Other users can intereact by liking and commenting, some people might even offer you tips to improve on your own recipes!
 
 ## Features 
-
 ### Home page
+The home page includes the recipes that all users have created, displayed as cards in a masonry style for a responive design with easy and pleasant viewing. Each card contains a recipe title, the user who created, the date created, a short description and a "view recipe" link to display more recipe details. If the recipe creator has provided an image, the card will also display for an appealing visual to the home page. This also gives the cards different sizes. Each card also shows the amount of likes the recipe has recieved. The cards are set in a row of 3 on large screens and decrease down to row of 1 on smaller devices.
 > image 
 
 #### Navigation
+The navigation bar is featured across all the webs url's. With easy functionality it allows the user to easy navigate around the site, Links include Home, About, Create Recipe, Profile links, Register and Log In, as well as Log Out when user us logged in and a frequently asked questions page. The page link is highlighted to show the user the current page. When the site is loaded on a smaller device the naviagtion is neatly compacted into an interactive burger icon menu.  
 > image 
 
 #### Footer
+The footer bar is featured across all the webs url's. It includes the social media links to allow the user to keep up to date with the app. With links to Facebook, Twitter, Instagram, Youtube and Linkedin are displayed in a line of icons. When a user hovers over the icons they are changed to a light blue colour. The footer bar also included the sites trademark for copyright purposes.
 > image 
 
 ### Recipe detail page
+The recipe detail page is displayed when the user clicks on the view recipe links on the recipe cards. This page displays everything the user needs for the recipe; title, user created and time, description, method, ingredients, all displayed on a larger card. If an image was provided when the recipe was created it will be set as the background with the card overlaying. Nutritional information, preperation time and amount served are also displayed at the top.
+
+The recipe card is set out for easy and appealing viewing for the user with the most important information being the center point and the secondary information being smaller. The nutritional information is inline below the title in green circles almost imitating the nutritional information seen on food packages in supermarkets. The amount serve and the prep time are below in red squares, this is so its the first thing the user sees and can determine wether they have enough time to make the recipe or wether they need to increase the quantity for more serving size.
+
+The card also includes the amount of likes the recipe has recieved with also the ability to like the recipe, as well as a comments box to view other users comments as well as add your own. This allows users to connect and show interest in others recipes as well as offer tips on changes or additions to the recipe. I believe this makes the app much more interactive with other users. When a user comments a pop up meesage will display to show the comment was published successful.
+
+Also included is quick share buttons to share the recipe on social media sites, Included is Facebook, Twitter, Instagram and Google. This is also good to get more traffic on the web as people can see and sign up to view their friends shared recipe. 
+
+If the user owns the recipe and are in the recipe detail view they will see update and delete buttons to edit their recipe. Users that dont own the recipe will not be able to access these buttons.
 > image
 
 ### Create recipe page
