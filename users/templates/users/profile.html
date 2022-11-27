@@ -1,9 +1,31 @@
 {% extends "recipes/base.html" %}
 <!-- Extends recipes/base.html -->
 {% block content %}
-<div class="container">
-    <h1>{{ user.username }}</h1>
-</div>
 
+<div class="question-container">
+    <div class="accordion-item">
+        <h1 class="text-center"><i class="fa-solid fa-user"></i> {{ user.username }}</h1>
+    </div>
+</div>
+{% if recipe.author == user %}
+ <h2>Your recipes:</h2>
+ <div class="row" data-masonry='{"percentPosition": true }'>
+    {% for recipe in recipes %}
+    <div class="card my-2 col-12 col-md-6 col-lg-4">
+        <!-- {% if recipe.featured_image %} -->
+        <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="">
+        <!-- {% endif %} -->
+        <div class="card-body">
+            <h5 class="card-title">{{ recipe.title }}</h5>
+            <p class="card-text">{{ recipe.description }}</p>
+            <a href="{% url 'recipes-detail' recipe.pk %}" class="card-link btn btn-outline-info">View Recipe</a>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated: {{ recipe.updated_at }}</small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
 <!--End block content of recipes/base.html -->
 {% endblock content %}
