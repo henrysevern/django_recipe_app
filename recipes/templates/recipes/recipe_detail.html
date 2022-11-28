@@ -23,13 +23,13 @@
                     <div class="container">
                         <!-- Recipe title-->
                         <h1 id="recipe-title">
-                            <strong>{{object.title}}</strong>
+                            <strong>{{recipe.title}}</strong>
                         </h1>
                         <!-- Author and time section -->
                         <div class="row">
-                            <h6 class="card-subtitle text-muted" id="recipe-subtitle">By: {{ object.author }}</h6>
+                            <h6 class="card-subtitle text-muted" id="recipe-subtitle">By: {{ recipe.author }}</h6>
                             <h6 class="card-subtitle text-muted" id="recipe-subtitle">Last Updated:
-                                {{ object.updated_at }}
+                                {{ recipe.updated_at|date:'N d, Y' }} 
                             </h6>
                         </div>
                         <!-- Section for calories, carbs, fat and protein -->
@@ -90,12 +90,12 @@
                                 </div>
                                 <!-- Update and delete section if user is owner of recipe -->
                                 <div class="row my-5">
-                                    {% if object.author == user or user.is_staff %}
+                                    {% if recipe.author == user or user.is_staff %}
                                     <div class="col-4">
                                         <a class="btn btn-outline-info"
-                                            href="{% url 'recipes-update' object.id %}">Update</a>
+                                            href="{% url 'recipes-update' recipe.id %}">Update</a>
                                         <a class="btn btn-outline-danger"
-                                            href="{% url 'recipes-delete' object.id %}">Delete</a>
+                                            href="{% url 'recipes-delete' recipe.id %}">Delete</a>
                                     </div>
                                     {% endif %}
                                     <div class="row">
@@ -107,10 +107,10 @@
                                                 <div class="comments" style="padding: 10px;">
                                                     <p class="font-weight-bold">
                                                         <!-- The commenter's name goes here. -->
-                                                        {{ comment.name }}
+                                                        {{ comment.user.username }}
                                                         <span class=" text-muted font-weight-normal">
                                                             <!-- The comment's created date goes here -->
-                                                            {{ comment.created_on }}
+                                                            {{ comment.created_on|date:'N d, Y' }}
                                                         </span> wrote:
                                                     </p>
                                                     <!-- The body of the comment goes before the | -->
@@ -132,8 +132,8 @@
 
                                                 <h3>Leave a comment:</h3>
                                                 <p>Posting as: {{ user.username }}</p>
-                                                <form method="post" style="margin-top: 1.3em;">
-                                                    {{ comment_form|crispy }}
+                                                <form method="post" action="{% url 'add_comment' recipe.id %}" style="margin-top: 1.3em;">
+                                                    {{ form|crispy }}
                                                     {% csrf_token %}
                                                     <button type="submit" class="btn btn-outline-info">Submit</button>
                                                 </form>
