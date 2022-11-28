@@ -1,8 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from django.views.generic import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
+from django.contrib import messages
 from . import models
 from .forms import CommentForm
 
@@ -22,17 +23,36 @@ class RecipeListView(ListView):
     model = models.Recipe
     template_name = 'recipes/home.html'
     context_object_name = 'recipes'
+    ordering = ['id']
 
 
-# Detail view class to see a single recipe
-class RecipeDetailView(DetailView):
-    model = models.Recipe
+def recipe_details(request, id):
+    """
+    Function to see a single recipe
+    """
+    recipe = get_object_or_404(models.Recipe, id=id)
+    comments = models.Comment.objects.filter(recipe=recipe, approved=True)
+    form = CommentForm(request.POST or None)
+    template = "recipes/recipe_detail.html"
+    context = {
+        "recipe": recipe,
+        "comments": comments,
+        "form": form,
+    }
+    return render(request, template, context)
 
-    def comments(request):
-        return render(request, "recipe_detail",
-                      {
-            "comment": CommentForm
-    })
+
+def add_comment(request, recipe_id):
+    recipe = get_object_or_404(models.Recipe, id=recipe_id)
+    form = CommentForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save(commit=False)
+            form.instance.recipe = recipe
+            form.instance.user = request.user
+            form.save()
+            messages.success(request, "Your comment is pending approval!")
+            return redirect(recipe_details, recipe_id)
 
 
 # Create view class to create recipes
