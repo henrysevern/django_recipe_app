@@ -1,3 +1,12 @@
+html, body {
+    height: 100%;
+}
+
+body>footer {
+    position: sticky;
+    top: 100vh;
+}
+
 #card-likes {
     justify-content: right;
 }
