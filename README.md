@@ -1,6 +1,6 @@
 # Recipe cards
 > image 
-- Recipe cards is a interactive application for your recipes! Store all your favourite recipes in one place for quick and easy access without having to search through countless recipe books! Create, edit and view all your recipes as well as viewing others on the app. Other users can intereact by liking and commenting, some people might even offer you tips to improve on your own recipes!
+- Recipe cards is a interactive application for your recipes! Store all your favourite recipes in one place for quick and easy access without having to search through countless recipe books! Create, edit and view all your recipes as well as viewing others on the app. Other users can intereact by liking and commenting, some people might even offer you tips to improve on your own recipes! The target audience of the app is for people who love cooking, sometimes cooking enthusiast's like myself, have recipes scattered through many books and is affective at keeping them all in one place!
 
 ## Features 
 ### Home page
@@ -28,30 +28,42 @@ If the user owns the recipe and are in the recipe detail view they will see upda
 > image
 
 ### Create recipe page
+The recipe create page is loaded when the user clicks on the create recipe link on the home page. This allows the user to create a recipe for the app. A simple form is required to fill out. Information like title, description, ingredients and method are required for the from to be submitted. Secondary information such as images, nutritional information, serving amount and prep time are not required if not provided. This form is simple to use and is not over complicated. One the form is submitted the recipe will appear on the home page as well as on your own profile.
 > image 
 
 ### Update/Edit recipe page
+The update recipe page is only able to be loaded when the recipe author is viewing their own recipe, this can be done via an update button. A user or non user viewing the recipe they havent created can not access the update page. The update page is very similar to the create recipe page with the already submitted information included in the text fields. Here the user can add, change and update the recipe. This is very useful if the user finds mistakes in their recipe, want to increase the serving size, or want to add more/take off the recipe. 
 > image 
 
 ### Delete recipe page
-> image 
+> The delete recipe page is also similar to the create and update pages. Similar to the update page, the delete page can only be accessed by the recipe author. Here the user can delete a recipe from the database. This allows the user to delete a recipe that doesnt work or is disliked. Also if the user's account is deleted, all the recipes that user has created will also be deleted.
 
 ### Sign Up/Register page 
+The sign up page is featured when the user clicks on the register option in the navigation bar. This will take the user to the sign up form which allows the user to create an account. An account must be created in order to interact with the website. The form is simple to use asking for a username, email and a repeat password. The same username cannot be submiited twice, a pop up message will show this if the user already exists. Once the form is submitted the user will be retuned to the home page and is required to log in. The register page is unaccessable when the user is logged in.
 > image 
 
-### Login page 
+### Login page
+The login page is very similar to the register page in that it can only be accessed when the user is signed out/does not have an account. It also includes a simple form with username and password required. Once the user has logged in the they will be redirected back to the home page. In the navigation bar the user can see their username next to a user icon. When logged in the logout button will display in the nav bar also. Clicking this link will log the user out. The login/logout functionality is simple to use and requires minimal effort so the user can focus on what's more important, the recipes!
 > image 
 
 ### Profile page 
+The profile page is useful when the user wants to view just their own recipes. This allows the use to filter out other recipes not created by them so they can focus on only their own. This is helpful for users that want to only view their own. Set up similar to the home page in a masonry style is easy to view.
 > image 
 
 ### FAQ page
+The frequently asked page is for users to find out how to do things on the app. Its set up in a accordion style with the boxes able to maximize(when the plus is clicked) to view the answer and minimize (when the minus icon is clicked). Only one box can be opened at once in this section to allow for tidy viewing. Simple and elegant to use, a user can easily find the answer they are looking for. They can even ask the app creator if one of their questions is not shown on the page! When the question is sent the user will see a pop up message to know their message as been recieved.
 > image 
 
 ### Exsisting Features
 
-### Features left to impliment
-
+### Features in future left to impliment
+- Password recovery for registered users. 
+- Users having the ability to delete their accounts.
+- Users being able to add more to profile (profile image, personal information, bios, etc).
+- Display top profiles at top of home page similar to instagram stories, from there users can view top users recipes.
+- Most liked recipes appearing at the top on home page.
+- Ability to be able to search for particular recipes based on hastags(being able to add drag and drop hashtags in creat recipe form for search).
+- The ability to keep special recipes private 
 
 ## Testing
 - For all testing documentation, Please refer to TESTING.md 
