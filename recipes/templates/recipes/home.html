@@ -19,7 +19,7 @@
             {{ recipe.number_of_likes }}
         </div>
         <div class="card-footer">
-            <small class="text-muted">Last updated: {{ recipe.updated_at }}</small>
+            <small class="text-muted">Last updated: {{ recipe.updated_at|date:'N d, Y' }}</small>
         </div>
     </div>
     {% endfor %}
