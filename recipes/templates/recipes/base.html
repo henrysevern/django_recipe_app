@@ -32,26 +32,13 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'recipes-home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'recipes-about' %}">About</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'recipes-create' %}">Create Recipe</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              More
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'user-profile' %}">My Profile</a></li>
-              <li><a class="dropdown-item" href="{% url 'user-register' %}">Sign Up!</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="{% url 'recipes-questions' %}">FAQ</a></li>
-            </ul>
-          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'recipes-questions' %}">FAQ</a>
+        </li>
         </ul>
         <div class="navbar-nav">
           {% if request.user.is_authenticated %}
@@ -63,10 +50,6 @@
           <a class="nav-item nav-link" href="{% url 'user-register' %}">Register</a>
           {% endif %}
         </div>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-info" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -85,7 +68,7 @@
     <div id="footer-details" class="row container-fluid m-0">
       <ul class="list-inline social-links">
         <li class="list-inline-item">
-            <span>Follow us on</span>
+          <span>Follow us on</span>
         </li>
         <li class="list-inline-item">
           <a target="_blank" href="#">
@@ -126,7 +109,7 @@
       </ul>
     </div>
     <p class="copyright text-muted">© Henry Severn 2022</p>
-</footer>
+  </footer>
 </body>
 <!-- Bootstrap script tags -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
