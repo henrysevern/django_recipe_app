@@ -7,7 +7,8 @@ urlpatterns = [
      # url path for recipe detail
      path('recipe/<int:id>/', views.recipe_details,
           name="recipes-detail"),
-     path('recipe/add_comment/<int:recipe_id>/', views.add_comment, name="add_comment"),
+     path('recipe/add_comment/<int:recipe_id>/', views.add_comment,
+          name="add_comment"),
      # url path for create recipes
      path('recipe/create/', views.RecipeCreateView.as_view(),
           name="recipes-create"),
