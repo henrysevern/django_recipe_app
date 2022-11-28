@@ -29,12 +29,12 @@
                         <div class="row">
                             <h6 class="card-subtitle text-muted" id="recipe-subtitle">By: {{ recipe.author }}</h6>
                             <h6 class="card-subtitle text-muted" id="recipe-subtitle">Last Updated:
-                                {{ recipe.updated_at|date:'N d, Y' }} 
+                                {{ recipe.updated_at|date:'N d, Y' }}
                             </h6>
                         </div>
                         <!-- Section for calories, carbs, fat and protein -->
                         <div>
-                            <div class="col-md-12 col-xl-12 col-sm-12 col-xs-12"  id="nutritional-box">
+                            <div class="col-md-12 col-xl-12 col-sm-12 col-xs-12" id="nutritional-box">
                                 <div id="nutritional-inline">
                                     <label for="calories">Calories</label>
                                     <span id="calories" class="border circle">{{recipe.calories}} Kcal</span>
@@ -90,6 +90,9 @@
                                 </div>
                                 <!-- Update and delete section if user is owner of recipe -->
                                 <div class="row my-5">
+                                    <div>
+                                        {{ recipe.number_of_likes }}<i class="fas fa-heart text-danger"></i>
+                                    </div>
                                     {% if recipe.author == user or user.is_staff %}
                                     <div class="col-4">
                                         <a class="btn btn-outline-info"
@@ -122,7 +125,7 @@
                                         </div>
                                         <div class="col-md-4 card mb-4  mt-3 ">
                                             <div class="card-body">
-                                            
+
                                                 {% if commented %}
                                                 <div class="alert alert-success" role="alert">
                                                     Your comment is awaiting approval
@@ -132,7 +135,8 @@
 
                                                 <h3>Leave a comment:</h3>
                                                 <p>Posting as: {{ user.username }}</p>
-                                                <form method="post" action="{% url 'add_comment' recipe.id %}" style="margin-top: 1.3em;">
+                                                <form method="post" action="{% url 'add_comment' recipe.id %}"
+                                                    style="margin-top: 1.3em;">
                                                     {{ form|crispy }}
                                                     {% csrf_token %}
                                                     <button type="submit" class="btn btn-outline-info">Submit</button>
