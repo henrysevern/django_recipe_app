@@ -242,4 +242,8 @@ p.copyright {
         height: 40px;
         margin-left: 5px;
     }
+    footer li {
+        font-size: 0.5rem;
+        line-height: 1.7rem;
+    }
 }
