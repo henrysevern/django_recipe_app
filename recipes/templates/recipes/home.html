@@ -15,6 +15,8 @@
             <h6 class="card-subtitle mb-2 text-muted">{{ recipe.author }}</h6>
             <p class="card-text">{{ recipe.description }}</p>
             <a href="{% url 'recipes-detail' recipe.pk %}" class="card-link btn btn-outline-info">View Recipe</a>
+            <i class="fas fa-heart text-danger"></i>
+            {{ recipe.number_of_likes }}
         </div>
         <div class="card-footer">
             <small class="text-muted">Last updated: {{ recipe.updated_at }}</small>
