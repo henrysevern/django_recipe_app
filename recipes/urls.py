@@ -18,8 +18,6 @@ urlpatterns = [
      # url path for delete recipe
      path('recipe/<int:pk>/delete/', views.RecipeDeleteView.as_view(),
           name="recipes-delete"),
-     # url path for about page
-     path('about/', views.about, name="recipes-about"),
      # url path for FAQ page
      path('questions/', views.questions, name="recipes-questions"),
 
