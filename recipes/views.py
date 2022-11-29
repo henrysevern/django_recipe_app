@@ -8,9 +8,10 @@ from . import models
 from .forms import CommentForm
 
 
-# Function renders home page and passes in recipes dictionary
 def home(request):
-
+    """
+    Function renders home page and passes in recipes dictionary
+    """
     recipes = models.Recipe.objects.all()
     context = {
         'recipes': recipes
@@ -43,6 +44,9 @@ def recipe_details(request, id):
 
 
 def add_comment(request, recipe_id):
+    """
+    Function for user to add comments
+    """
     recipe = get_object_or_404(models.Recipe, id=recipe_id)
     form = CommentForm(request.POST or None)
     if request.method == "POST":
@@ -94,11 +98,9 @@ class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == recipe.author
 
 
-# Function renders about page
-def about(request):
-    return render(request, "recipes/about.html")
-
-
 # Function renders FAQ page
 def questions(request):
+    """
+    Function renders FAQ page
+    """
     return render(request, "recipes/questions.html")
