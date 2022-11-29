@@ -27,11 +27,11 @@ class RecipeListView(ListView):
     ordering = ['id']
 
 
-def recipe_details(request, id):
+def recipe_details(request, pk):
     """
     Function to see a single recipe
     """
-    recipe = get_object_or_404(models.Recipe, id=id)
+    recipe = get_object_or_404(models.Recipe, pk=pk)
     comments = models.Comment.objects.filter(recipe=recipe, approved=True)
     form = CommentForm(request.POST or None)
     template = "recipes/recipe_detail.html"

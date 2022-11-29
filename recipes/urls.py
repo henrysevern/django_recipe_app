@@ -5,7 +5,7 @@ urlpatterns = [
      # url path for all recipes
      path('', views.RecipeListView.as_view(), name="recipes-home"),
      # url path for recipe detail
-     path('recipe/<int:id>/', views.recipe_details,
+     path('recipe/<int:pk>/', views.recipe_details,
           name="recipes-detail"),
      path('recipe/add_comment/<int:recipe_id>/', views.add_comment,
           name="add_comment"),
