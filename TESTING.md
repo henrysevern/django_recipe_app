@@ -13,41 +13,64 @@ All code for `HTML` has been validated through validator.w3, validated by URI
 
 > home.html
 
+No additional errors on this template.
+
 ![home.html](documentation/code_validation/html/home.png)
 
 > questions.html
+
+No additional errors on this template.
 
 ![questions.html](documentation/code_validation/html/questions.png)
 
 > delete.html
 
+No additional errors on this template.
+
 ![delete.html](documentation/code_validation/html/delete.png)
 
 > detail.html
+
+Many errors on this template 
+- repeat `id` attributes, now changed to `class` attributes.
+- Unclosed `div` tags.
+- Changed the `label` elements to `span` and removed `id` attributes not being used anymore
 
 ![detail.html](documentation/code_validation/html/detail.png)
 
 > create.html
 
+No additional errors on this template.
+
 ![create.html](documentation/code_validation/html/create.png)
 
 > login.html
+
+No additional errors on this template.
 
 ![login.html](documentation/code_validation/html/login.png)
 
 > logout.html
 
+No additional errors on this template.
+
 ![logout.html](documentation/code_validation/html/logout.png)
 
 > profile.html
+
+No additional errors on this template.
 
 ![profile.html](documentation/code_validation/html/profile.png)
 
 > register.html
 
+No additional errors on this template.
+
 ![register.html](documentation/code_validation/html/register.png)
 
 > update.html
+
+No additional errors on this template.
 
 ![update.html](documentation/code_validation/html/home.png)
 
