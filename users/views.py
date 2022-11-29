@@ -7,6 +7,9 @@ from . import forms
 
 
 def register(request):
+    """
+    Functon allow registration
+    """
     if request.method == "POST":
         form = forms.UserRegisterForm(request.POST)
         if form.is_valid():
@@ -22,6 +25,9 @@ def register(request):
 
 @login_required
 def profile(request):
+    """
+    Function renders profile page as well as only show users their own recipes
+    """
     user_recipes = Recipe.objects.filter(author=request.user)
     template = 'users/profile.html'
     context = {
