@@ -3,29 +3,40 @@
 {% block content %}
 
 <div class="question-container">
-    <div class="accordion-item">
-        <h1 class="text-center"><i class="fa-solid fa-user"></i> {{ user.username }}</h1>
+    <div>
+        <h1 class="accordion-item"><i class="fas fa-user"></i> {{ user.username }}</h1>
     </div>
 </div>
-{% if recipe.author == user %}
- <h2>Your recipes:</h2>
- <div class="row" data-masonry='{"percentPosition": true }'>
+<h1>Your Recipes:</h1>
+<div class="row" data-masonry='{"percentPosition": true }'>
     {% for recipe in recipes %}
+    <!-- Card image -->
     <div class="card my-2 col-12 col-md-6 col-lg-4">
-        <!-- {% if recipe.featured_image %} -->
+        {% if recipe.featured_image %}
         <img src="{{ recipe.featured_image.url }}" class="card-img-top" alt="">
-        <!-- {% endif %} -->
+        {% endif %}
+        <!-- Card body -->
         <div class="card-body">
             <h5 class="card-title">{{ recipe.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ recipe.author }}</h6>
             <p class="card-text">{{ recipe.description }}</p>
             <a href="{% url 'recipes-detail' recipe.pk %}" class="card-link btn btn-outline-info">View Recipe</a>
+            <i class="fas fa-heart text-danger"></i>
+            {{ recipe.number_of_likes }}
         </div>
+        <!-- Card footer -->
         <div class="card-footer">
-            <small class="text-muted">Last updated: {{ recipe.updated_at }}</small>
+            <small class="text-muted">Last updated: {{ recipe.updated_at|date:'N d, Y' }}</small>
         </div>
+    </div>
+    {% empty %}
+    <!-- For if the user hasnt got any recipes -->
+    <div>
+        <h3 class="border-bottom text-muted">You dont have any recipes!</h3>
+        <a class="btn btn-outline-info"
+            href="{% url 'recipes-create' %}">Create recipe</a>
     </div>
     {% endfor %}
 </div>
-{% endif %}
 <!--End block content of recipes/base.html -->
 {% endblock content %}
