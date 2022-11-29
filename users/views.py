@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+from recipes.models import Recipe
 from . import forms
 
 
@@ -13,7 +13,7 @@ def register(request):
             form.save()
             # cleaned data is a dictionary
             username = form.cleaned_data.get('username')
-            messages.success(request, f"{username}, you're account is created! Please login")
+            messages.success(request, f"{username}, you're account is created! Please login")  # noqa
             return redirect('recipes-home')
     else:
         form = forms.UserRegisterForm()
@@ -22,5 +22,10 @@ def register(request):
 
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html')
-    messages.success(request, f"{username}, you're logged in")
+    user_recipes = Recipe.objects.filter(author=request.user)
+    template = 'users/profile.html'
+    context = {
+        'recipes': user_recipes
+    }
+    # messages.success(request, f"{username}, you're logged in")
+    return render(request, template, context)
