@@ -1,62 +1,88 @@
-# Recipe cards
-> image 
+# H's Recipe cards
+
+![mockup](documentation/features/mockup.png)
+
 - Recipe cards is a interactive application for your recipes! Store all your favourite recipes in one place for quick and easy access without having to search through countless recipe books! Create, edit and view all your recipes as well as viewing others on the app. Other users can intereact by liking and commenting, some people might even offer you tips to improve on your own recipes! The target audience of the app is for people who love cooking, sometimes cooking enthusiast's like myself, have recipes scattered through many books and is affective at keeping them all in one place!
 
 ## Features 
 ### Home page
 The home page includes the recipes that all users have created, displayed as cards in a masonry style for a responive design with easy and pleasant viewing. Each card contains a recipe title, the user who created, the date created, a short description and a "view recipe" link to display more recipe details. If the recipe creator has provided an image, the card will also display for an appealing visual to the home page. This also gives the cards different sizes. Each card also shows the amount of likes the recipe has recieved. The cards are set in a row of 3 on large screens and decrease down to row of 1 on smaller devices.
-> image 
+
+![home](documentation/features/home.png)
 
 #### Navigation
 The navigation bar is featured across all the webs url's. With easy functionality it allows the user to easy navigate around the site, Links include Home, About, Create Recipe, Profile links, Register and Log In, as well as Log Out when user us logged in and a frequently asked questions page. The page link is highlighted to show the user the current page. When the site is loaded on a smaller device the naviagtion is neatly compacted into an interactive burger icon menu.  
-> image 
+
+![navbar](documentation/features/navbar.png)
 
 #### Footer
 The footer bar is featured across all the webs url's. It includes the social media links to allow the user to keep up to date with the app. With links to Facebook, Twitter, Instagram, Youtube and Linkedin are displayed in a line of icons. When a user hovers over the icons they are changed to a light blue colour. The footer bar also included the sites trademark for copyright purposes.
-> image 
+
+![footer](documentation/features/footer.png)
 
 ### Recipe detail page
 The recipe detail page is displayed when the user clicks on the view recipe links on the recipe cards. This page displays everything the user needs for the recipe; title, user created and time, description, method, ingredients, all displayed on a larger card. If an image was provided when the recipe was created it will be set as the background with the card overlaying. Nutritional information, preperation time and amount served are also displayed at the top.
 
+![detail](documentation/features/detail.png)
+
 The recipe card is set out for easy and appealing viewing for the user with the most important information being the center point and the secondary information being smaller. The nutritional information is inline below the title in green circles almost imitating the nutritional information seen on food packages in supermarkets. The amount serve and the prep time are below in red squares, this is so its the first thing the user sees and can determine wether they have enough time to make the recipe or wether they need to increase the quantity for more serving size.
 
-The card also includes the amount of likes the recipe has recieved with also the ability to like the recipe, as well as a comments box to view other users comments as well as add your own. This allows users to connect and show interest in others recipes as well as offer tips on changes or additions to the recipe. I believe this makes the app much more interactive with other users. When a user comments a pop up meesage will display to show the comment was published successful.
+The card also includes the amount of likes the recipe has recieved, unfortunately the ability to like the recipe will be added soon, as well as a comments box to view other users comments, as well as add your own. This allows users to connect and show interest in others recipes, as well as offer tips on changes or additions to the recipe. I believe this makes the app much more interactive with other users. When a user comments a pop up message will display to show the comment was published successful.
+
+![comments](documentation/features/comments.png)
 
 Also included is quick share buttons to share the recipe on social media sites, Included is Facebook, Twitter, Instagram and Google. This is also good to get more traffic on the web as people can see and sign up to view their friends shared recipe. 
 
+![share](documentation/features/share.png)
+
 If the user owns the recipe and are in the recipe detail view they will see update and delete buttons to edit their recipe. Users that dont own the recipe will not be able to access these buttons.
-> image
+
+![buttons](documentation/features/buttons.png)
 
 ### Create recipe page
 The recipe create page is loaded when the user clicks on the create recipe link on the home page. This allows the user to create a recipe for the app. A simple form is required to fill out. Information like title, description, ingredients and method are required for the from to be submitted. Secondary information such as images, nutritional information, serving amount and prep time are not required if not provided. This form is simple to use and is not over complicated. One the form is submitted the recipe will appear on the home page as well as on your own profile.
-> image 
+
+![create](documentation/features/create.png)
 
 ### Update/Edit recipe page
 The update recipe page is only able to be loaded when the recipe author is viewing their own recipe, this can be done via an update button. A user or non user viewing the recipe they havent created can not access the update page. The update page is very similar to the create recipe page with the already submitted information included in the text fields. Here the user can add, change and update the recipe. This is very useful if the user finds mistakes in their recipe, want to increase the serving size, or want to add more/take off the recipe. 
-> image 
 
 ### Delete recipe page
-> The delete recipe page is also similar to the create and update pages. Similar to the update page, the delete page can only be accessed by the recipe author. Here the user can delete a recipe from the database. This allows the user to delete a recipe that doesnt work or is disliked. Also if the user's account is deleted, all the recipes that user has created will also be deleted.
+The delete recipe page is also similar to the create and update pages. Similar to the update page, the delete page can only be accessed by the recipe author. Here the user can delete a recipe from the database. This allows the user to delete a recipe that doesnt work or is disliked. Also if the user's account is deleted, all the recipes that user has created will also be deleted.
+
+![delete](documentation/features/delete.png)
 
 ### Sign Up/Register page 
 The sign up page is featured when the user clicks on the register option in the navigation bar. This will take the user to the sign up form which allows the user to create an account. An account must be created in order to interact with the website. The form is simple to use asking for a username, email and a repeat password. The same username cannot be submiited twice, a pop up message will show this if the user already exists. Once the form is submitted the user will be retuned to the home page and is required to log in. The register page is unaccessable when the user is logged in.
-> image 
+
+![mockup](documentation/features/signup.png)
 
 ### Login page
 The login page is very similar to the register page in that it can only be accessed when the user is signed out/does not have an account. It also includes a simple form with username and password required. Once the user has logged in the they will be redirected back to the home page. In the navigation bar the user can see their username next to a user icon. When logged in the logout button will display in the nav bar also. Clicking this link will log the user out. The login/logout functionality is simple to use and requires minimal effort so the user can focus on what's more important, the recipes!
-> image 
+
+![login_link](documentation/features/login_link.png)
+![login](documentation/features/login.png)
 
 ### Profile page 
 The profile page is useful when the user wants to view just their own recipes. This allows the use to filter out other recipes not created by them so they can focus on only their own. This is helpful for users that want to only view their own. Set up similar to the home page in a masonry style is easy to view.
-> image 
+
+![profile](documentation/features/profile.png)
 
 ### FAQ page
 The frequently asked page is for users to find out how to do things on the app. Its set up in a accordion style with the boxes able to maximize(when the plus is clicked) to view the answer and minimize (when the minus icon is clicked). Only one box can be opened at once in this section to allow for tidy viewing. Simple and elegant to use, a user can easily find the answer they are looking for. They can even ask the app creator if one of their questions is not shown on the page! When the question is sent the user will see a pop up message to know their message as been recieved.
-> image 
 
-### Exsisting Features
+![faq](documentation/features/faq.png)
 
-### Features in future left to impliment
+## Other Features
+
+### Pop up messages 
+Various pop up messages are included around the site to tell the user whats happening with their inputs. For example;
+
+![message](documentation/features/message.png)
+![comment_message](documentation/features/comment_message.png)
+
+## Features in future left to impliment
+- Like button, didn't manage to create in time, please refer to the user stories.
 - Password recovery for registered users. 
 - Users having the ability to delete their accounts.
 - Users being able to add more to profile (profile image, personal information, bios, etc).
@@ -67,9 +93,6 @@ The frequently asked page is for users to find out how to do things on the app. 
 
 ## Testing
 - For all testing documentation, Please refer to TESTING.md 
-
-## Unfixed Bugs
-- 
 
 ## Deployment and setting up
 
@@ -255,7 +278,8 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/henrysevern/django_recipe_app)
 
 # Sources
-- Include() function - https://djangoproject.com/en/1.11/ref/urls/#django.conf.urls.include
+- Fellow slack students for advive 
+- Tutor and mentor support
 - Nav Bar - Bootstrap 
 - Crispy Forms - https://django-crispy-forms.readthedocs.io/en/latest/index.html
 - Masonary style cards - https://getbootstrap.com/docs/5.2/examples/masonry/
