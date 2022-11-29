@@ -4,9 +4,11 @@
 
 <div class="question-container">
     <div>
-        <h1 class="accordion-item"><i class="fas fa-user"></i> {{ user.username }}</h1>
+        <h1 class="text-muted"><i class="fas fa-user"></i> {{ user.username }}</h1>
+        <h6 class="text-muted">{{ user.email }}</h6>
     </div>
 </div>
+<hr>
 <h1>Your Recipes:</h1>
 <div class="row" data-masonry='{"percentPosition": true }'>
     {% for recipe in recipes %}
