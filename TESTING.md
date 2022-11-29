@@ -32,11 +32,11 @@ No additional errors on this template.
 > detail.html
 
 Many errors on this template 
-- repeat `id` attributes, now changed to `class` attributes.
+- Repeat `id` attributes, now changed to `class` attributes.
 - Unclosed `div` tags.
 - Changed the `label` elements to `span` and removed `id` attributes not being used anymore
 
-![detail.html](documentation/code_validation/html/detail.png)
+![details.html](documentation/code_validation/html/details.png)
 
 > create.html
 
@@ -302,6 +302,9 @@ The website has been tested on desktop, tablet, and smartphone and responds well
 - Check functionality.
 
 `This user story is due to be implimented in the future, unfortunately, I couldn't achieve by the desired project date`
+
+# Defense testing
+- I have imported and used `login_required`, `LoginRequiredMixin` and `UserPassesTestMixin` for my app's defenses. I have tested as a user and are unable to break the app, edit/delete, comment without authority or log in, login without correct password all work perfectly. 
 
 # Manual testing
 
