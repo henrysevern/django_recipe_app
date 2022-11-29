@@ -32,24 +32,24 @@ body>footer {
     margin-bottom: 3px;
 }
 
-#recipe-subtitle {
+.recipe-subtitle {
     margin-bottom: 2px;
     text-align: center;
 }
 /* quanties, servings, nutritional value boxes and cicles */
-#nutritional-box {
+.nutritional-box {
     display: flex;
     justify-content: center;
     padding: 20px;
 
 }
 
-#nutritional-border {
+.nutritional-border {
     border-left: 2px solid lightblue;
     height: 40px;
     margin-left: 5px;
 }
-#nutritional-inline{
+.nutritional-inline{
     display: inline;   
 }
 
@@ -75,7 +75,7 @@ background-color:#ffe6e6;
 
 /* method and ingredients section */
 
-#jumbotron-background {
+.jumbotron-background {
     background-color: whitesmoke;
     box-shadow: .5rem 2px .5rem rgba(0,0,0,.1);
     padding: 3px;
