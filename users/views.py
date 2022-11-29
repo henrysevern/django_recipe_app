@@ -33,5 +33,4 @@ def profile(request):
     context = {
         'recipes': user_recipes
     }
-    # messages.success(request, f"{username}, you're logged in")
     return render(request, template, context)
