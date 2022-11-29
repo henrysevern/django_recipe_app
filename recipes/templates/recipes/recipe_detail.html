@@ -6,7 +6,7 @@
 <!-- featured image set as background -->
 <section>
     <div style="max-height:200px;">
-        <img src="{{recipe.featured_image.url}}" style="width:100%">
+        <img src="{{recipe.featured_image.url}}" style="width:100%" alt="">
     </div>
 </section>
 <!-- Main layout -->
@@ -27,62 +27,61 @@
                         </h1>
                         <!-- Author and time section -->
                         <div class="row">
-                            <h6 class="card-subtitle text-muted" id="recipe-subtitle">By: {{ recipe.author }}</h6>
-                            <h6 class="card-subtitle text-muted" id="recipe-subtitle">Last Updated:
+                            <h6 class="card-subtitle text-muted recipe-subtitle">By: {{ recipe.author }}</h6>
+                            <h6 class="card-subtitle text-muted recipe-subtitle">Last Updated:
                                 {{ recipe.updated_at|date:'N d, Y' }}
                             </h6>
                         </div>
                         <!-- Section for calories, carbs, fat and protein -->
                         <div>
-                            <div class="col-md-12 col-xl-12 col-sm-12 col-xs-12" id="nutritional-box">
-                                <div id="nutritional-inline">
-                                    <label for="calories">Calories</label>
-                                    <span id="calories" class="border circle">{{recipe.calories}} Kcal</span>
+                            <div class="col-md-12 col-xl-12 col-sm-12 col-xs-12 nutritional-box">
+                                <div class="nutritional-inline">
+                                    <span class="mx-2">Calories</span>
+                                    <span class="border circle">{{recipe.calories}} Kcal</span>
                                 </div>
-                                <div id="nutritional-border"></div>
-                                <div id="nutritional-inline">
-                                    <label for="carbs" class="mx-2">Carbs</label>
-                                    <span id="carbs" class="border circle">{{recipe.carbs}} g</span>
+                                <div class="nutritional-border"></div>
+                                <div class="nutritional-inline">
+                                    <span class="mx-2">Carbs</span>
+                                    <span class="border circle">{{recipe.carbs}}</span>
                                 </div>
-                                <div id="nutritional-border"></div>
-                                <div id="nutritional-inline">
-                                    <label for="fat" class="mx-2">Fat</label>
-                                    <span id="fat" class="border circle">{{recipe.fat}} g</span>
+                                <div class="nutritional-border"></div>
+                                <div class="nutritional-inline">
+                                    <span class="mx-2">Fat</span>
+                                    <span class="border circle">{{recipe.fat}} g</span>
                                 </div>
-                                <div id="nutritional-border"></div>
-                                <div id="nutritional-inline">
-                                    <label for="protein" class="mx-2">Protein</label>
-                                    <span id="protein" class="border circle">{{recipe.protein}} g</span>
+                                <div class="nutritional-border"></div>
+                                <div class="nutritional-inline">
+                                    <span class="mx-2">Protein</span>
+                                    <span class="border circle">{{recipe.protein}} g</span>
                                 </div>
                             </div>
                         </div>
                         <!-- Section for prep time and amount of servings -->
                         <div class="row">
-                            <div class="col-md-12 col-xl-12" id="nutritional-box">
-                                <div id="nutritional-inline">
-                                    <label for="calories">Prep:</label>
-                                    <span id="calories" class="border rectangle">{{recipe.time}} mins</span>
+                            <div class="col-md-12 col-xl-12 nutritional-box">
+                                <div class="nutritional-inline">
+                                    <span>Prep:</span>
+                                    <span class="border rectangle">{{recipe.time}} mins</span>
                                 </div>
-                                <div id="nutritional-inline">
-                                    <label for="carbs" class="mx-2">Servings:</label>
-                                    <span id="carbs" class="border rectangle">{{recipe.servings}}</span>
+                                <div class="nutritional-inline">
+                                    <span class="mx-2">Servings:</span>
+                                    <span id="servings" class="border rectangle">{{recipe.servings}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row row pt-lg-5 pt-3">
                             <!-- Recipe desciption section -->
                             <div class="col-md-12 col-xl-12">
-                                <!-- <p> {{recipe.description}}</p> -->
                                 <div class="row">
                                     <!-- Ingredients and method section -->
                                     <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12">
-                                        <div class="jumbotron" id="jumbotron-background">
+                                        <div class="jumbotron jumbotron-background">
                                             <h1>Ingredients:</h1>
                                             <p>{{recipe.ingredients|safe}}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-xl-6 col-sm-12 col-xs-12">
-                                        <div class="jumbotron" id="jumbotron-background">
+                                        <div class="jumbotron jumbotron-background">
                                             <h1>Method:</h1>
                                             <p>{{recipe.directions}}</p>
                                         </div>
@@ -166,7 +165,6 @@
                                         <a class="btn btn-primary" style="background-color: #0082ca;"
                                             href="https://www.linkedin.com/" target="_blank" role="button"><i
                                                 class="fab fa-linkedin-in"></i></a>
-
                                     </div>
                                 </div>
                             </div>
@@ -174,4 +172,7 @@
                     </div>
                 </div>
             </div>
-            {% endblock content %}
+        </div>
+    </div>
+</div>
+        {% endblock content %}
